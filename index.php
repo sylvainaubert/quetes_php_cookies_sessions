@@ -1,9 +1,22 @@
 <?php
-header('Location: login.php');
-exit();
+session_start();
+if (isset($_GET['add_to_cart'])) {
+    if ($_GET['add_to_cart'] == 46) {
+        $_SESSION['pecan'] ++;
+    } elseif ($_GET['add_to_cart'] == 36) {
+        $_SESSION['chips'] ++;
+    } elseif ($_GET['add_to_cart'] == 58) {
+        $_SESSION['cookie'] ++;
+    } elseif ($_GET['add_to_cart'] == 32) {
+        $_SESSION['m&m'] ++;
+    }
+} else {
+    $_SESSION['pecan'] = $_SESSION['chips'] = $_SESSION['cookie'] = $_SESSION['m&m'] = 0;
+}
+
+require 'inc/head.php';
 ?>
 
-<?php require 'inc/head.php'; ?>
 <section class="cookies container-fluid">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">

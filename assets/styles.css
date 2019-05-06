@@ -54,6 +54,11 @@ section.cookies{
 	border-radius: 50%;
 }
 
+.title_size{
+    font-size: 30px;
+    margin-bottom: 80px;
+}
+
 @media screen and ( min-width:768px ){
 
   body {
